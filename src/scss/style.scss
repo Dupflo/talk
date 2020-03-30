@@ -1,0 +1,496 @@
+@import "config";
+@import "menu";
+@import "buttons";
+@import "mobile";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+p {
+  font-family: $font-stack-light;
+  line-height: 1.5;
+
+  strong {
+    font-family: $font-stack-bold;
+  }
+}
+
+body {
+  font-family: $font-stack;
+  line-height: 1;
+  font-size: 18px;
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  position: relative;
+  margin-top:2em;
+  height: 15vh;
+  left: 100px;
+  width: 85px;
+  img {
+    width: 100%;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.bkg {
+  background: $light-color;
+}
+
+h1 {
+  font-size: 1.5em;
+  &.home {
+    font-size: 4em;
+    font-family: $font-stack-bold;
+  }
+  &.title {
+    font-family: $font-stack-bold;
+    font-size: 3em;
+    line-height: 1.5;
+    @include mediaSm {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+  }
+
+  font-family: $font-stack-bold;
+}
+
+h2 {
+  font-family: $font-stack-bold;
+  font-size: 1em;
+}
+
+.inline-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/** START CONTEXT **/
+.context-img {
+  position: absolute;
+  top: -50px;
+  height: 100px;
+  width: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &-1 {
+    background-image: url("../images/context/users.png");
+  }
+
+  &-2 {
+    background-image: url("../images/context/sablier.png");
+  }
+
+  &-3 {
+    background-image: url("../images/context/thumb.png");
+  }
+}
+
+small {
+  font-size: 0.8em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.card {
+  font-family: $font-stack-bold;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+
+  &:not(.primary) {
+    position: relative;
+    top: 3em;
+    @include mediaSm {
+      top: 0;
+    }
+  }
+
+  h2 {
+    margin: 20px 0 20px 0;
+    font-size: 4em;
+    display: flex;
+    align-items: center;
+
+    small {
+      font-size: 0.4em;
+    }
+  }
+
+  &.primary {
+    background: $primary-color;
+  }
+
+  &-list {
+    position: relative;
+  }
+
+  &-id {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    -webkit-box-shadow: 66px 71px 172px -75px rgba(135, 135, 135, 1);
+    -moz-box-shadow: 66px 71px 172px -75px rgba(135, 135, 135, 1);
+    box-shadow: 66px 71px 172px -75px rgba(135, 135, 135, 1);
+
+    h2 {
+      font-family: $font-stack-light;
+      font-size: 1.8em;
+      margin-top: 1em;
+    }
+
+    h3 {
+      font-family: $font-stack-bold;
+      color: #bfbfbf;
+      margin-top: 0.5em;
+    }
+  }
+
+  &-follow {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    margin-top: 1em;
+    border-radius: 15px;
+    padding: 10px 5px;
+    width: 260px;
+
+    @include mediaXL {
+      &:nth-child(1) {
+        bottom: -150px;
+        right: -48px;
+        position: absolute;
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        right: 150px;
+        bottom: -290px;
+      }
+    }
+  }
+}
+
+.label-group {
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+.label-light {
+  font-size: 1.3em;
+  background-color: $light-color;
+  border-radius: 30px;
+  margin-top: 1em;
+  padding: 0.4em 1.8em;
+}
+
+.vertical-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  margin: 1em;
+  -webkit-box-shadow: 0px 16px 38px -12px rgba(0, 0, 0, 0.61);
+  box-shadow: 0px 16px 38px -12px rgba(0, 0, 0, 0.61);
+
+  &:not(.primary) {
+    position: relative;
+    left: 300px;
+    @include mediaSm {
+      left: 0;
+    }
+  }
+}
+
+.problems{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-image: url("../images/freins/man.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  height: 100vh;
+}
+
+.pb {
+  position: relative;
+  left: 200px;
+  p {
+    font-size: 1.3em;
+    padding: 0.5em;
+  }
+  &-img {
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 1em;
+
+    &-1 {
+      background-image: url("../images/freins/time.png");
+    }
+
+    &-2 {
+      background-image: url("../images/freins/worker.png");
+    }
+
+    &-3 {
+      background-image: url("../images/freins/money.png");
+    }
+  }
+}
+
+/** END CONTEXT **/
+
+/** Nos expertises **/
+
+.social-logo {
+  width: 80px;
+  margin-right: 0.5em;
+}
+
+.social-service {
+  background: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 16px 38px -12px rgba(0, 0, 0, 0.61);
+  box-shadow: 0px 20px 38px -12px rgba(0, 0, 0, 0.2);
+
+  p {
+    margin-top: 2em;
+  }
+
+  @include mediaXL {
+    &:first-child {
+      position: relative;
+      top: 2em;
+    }
+    &:nth-child(2) {
+      position: relative;
+      top: 5em;
+    }
+  }
+}
+
+.round {
+  position: relative;
+  min-width: 550px;
+  height: 550px;
+  background-image: url(../images/services/talk360.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.arg {
+  width: 80px;
+  position: absolute;
+
+  &1 {
+    left: 10%;
+    top: 5%;
+  }
+
+  &2 {
+    right: 10%;
+    top: 5%;
+  }
+
+  &3 {
+    left: -5%;
+    bottom: 30%;
+  }
+
+  &4 {
+    right: -5%;
+    bottom: 30%;
+  }
+
+  &5 {
+    left: 42%;
+    right: 50%;
+    bottom: -7%;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+/** START PARALLAX **/
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 50vw;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+.card1 {
+  background-image: url(../images/squares.png);
+}
+
+.card2 {
+  background-image: url(../images/phone.png);
+}
+
+.card3 {
+  background-image: url(../images/emojis.png);
+}
+
+/** END PARALLAX **/
+
+/** START PRICE PAGE **/
+
+#price-page {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bundle {
+  background: #fff;
+  border-radius: 25px;
+}
+
+.check-item,
+.price-check-item {
+  display: flex;
+  justify-content: center;
+  @include mediaXL {
+    align-items: center;
+  }
+}
+
+i {
+  &.checked {
+    width: 90px;
+    height: 50px;
+    background-image: url(../images/check.png);
+    background-repeat: no-repeat;
+  }
+  &.light-checked {
+    width: 35px;
+    height: 35px;
+    background-image: url(../images/item-check.png);
+    background-repeat: no-repeat;
+  }
+}
+
+.engagement {
+  background: $primary-color;
+  border-radius: 35px;
+  padding: 0.5em;
+}
+
+.payment-notes {
+  font-family: $font-stack-light;
+  padding: 1em;
+  background: $light-color;
+  border-radius: 5px;
+  line-height: 1.5;
+}
+
+.price {
+  font-family: $font-stack-light;
+  display: flex;
+  font-size: 1.8em;
+  &-nb {
+    font-weight: 600;
+    font-size: 2em;
+  }
+
+  .period {
+    margin-left: 1em;
+    color: #7f7f7f;
+    strong {
+      color: #000;
+    }
+  }
+}
+
+i {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 45px;
+  height: 45px;
+}
+
+.insta {
+  background-image: url(../images/insta.png);
+  width: 80px;
+  height: 80px;
+  margin-right: 1.5em;
+}
+
+.fb {
+  background-image: url(../images/fb.png);
+  width: 80px;
+  height: 80px;
+  margin-right: 1.5em;
+}
+
+.smile {
+  background-image: url(../images/contact/smiley.png);
+}
+
+.profil {
+  width: 150px;
+  height: 150px;
+  background-image: url(../images/contact/photoRaph.png);
+}
+
+/** END PRICE PAGE **/
+
+@import "buttons";
+
+// @import 'homeparallax';

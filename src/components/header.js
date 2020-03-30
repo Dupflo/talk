@@ -1,42 +1,37 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Image from "../components/image"
+import Logo from "../components/imgs/logo"
+import Menu from "../components/menu"
+import useToggler from "../components/useToggler"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+function Header(props) {
+  const [show, toggle] = useToggler(false)
+
+  return (
+    <>
+      <header className="header-mobile visible-mobile">
+        <div
+          className="menu-btn"
+          onClick={toggle}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+          <div className="btn-line"></div>
+          <div className="btn-line"></div>
+          <div className="btn-line"></div>
+        </div>
+        <div style={{ display: show ? "block" : "none" }}>
+          <Menu />
+        </div>
+      </header>
+      <header className="header-desktop visible-desktop">
+      <div className="logo" style={{ maxWidth: `100px` }}>
+       <Link to="/"><Image alt="Gatsby in Space" filename="logo_talk.png" /></Link> 
+      </div>
+        <Menu />
+      </header>
+    </>
+  )
 }
 
 export default Header

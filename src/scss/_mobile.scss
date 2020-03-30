@@ -1,0 +1,157 @@
+@include mediaXL {
+  header {
+    background: #fff;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left:0;
+    width: 300px;
+    min-height: 100vh;
+  }
+  main {
+    margin-left:300px;
+  }
+  .visible-mobile {
+    display: none;
+  }
+}
+
+@include mediaLg {
+
+  .visible-mobile {
+    display: none;
+  }
+}
+
+@include mediaMd {
+  header {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  main {
+    width: 100%;
+  }
+}
+
+@include mediaSm {
+  main {
+    position: relative;
+    top: $header-mobile-height;
+    height: auto;
+  }
+  .container {
+    max-width: 1450px;
+    padding: 0 15px;
+    margin: 0 auto;
+    &-md {
+      max-width: 1100px;
+      padding: 0;
+      margin: 0 auto;
+    }
+    &-lg {
+      max-width: 1450px;
+      padding: 0 30px;
+      margin: 0 auto;
+    }
+  }
+  .card {
+    &:not(.primary) {
+      top: 0;
+    }
+  }
+
+  .visible-desktop {
+    display: none;
+  }
+}
+
+//Margin & padding classes
+$spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+    @include mediaSm {
+      margin: 0;
+    }
+  }
+
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+    @include mediaSm {
+      margin: #{$space/2}rem;
+    }
+  }
+
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+    @include mediaSm {
+      margin: 0;
+    }
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem;
+    @include mediaSm {
+      padding: #{$space/2}rem;
+    }
+  }
+
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+    @include mediaSm {
+      padding: #{$space/2}rem 0;
+    }
+  }
+
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+    @include mediaSm {
+      padding: 0;
+    }
+  }
+
+  .flex-start {
+    align-items: flex-start;
+  }
+
+  .flex-center {
+    align-items: center;
+  }
+
+  .grid-#{$space} {
+    display: grid;
+    padding: 1em;
+    align-items: center;
+    grid-template-columns: repeat($space, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+
+    @include mediaLg {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+
+    @include mediaMd {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  .grid-left{
+    grid-template-columns: 60% 40%;
+    grid-gap: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+  }
+  .man{
+    background-image: url(../images/freins/man.jpg);
+    background-size: cover;
+    background-position-x: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,81 @@
+@import 'fonts';
+
+$font-stack: "Calibri";
+$font-stack-light: "Degarism Studio", sans-serif;
+$font-stack-bold: "Degarism Studio Bold", sans-serif;
+$primary-color: #feec01;
+$secondary-color: #000;
+$light-color: #f5f5f9;
+$header-mobile-height: 60px;
+
+
+// Set text color based on bg
+@function set-text-color($color) {
+    @if(lightness($color) > 70) {
+        @return #333;
+    } @else {
+        @return #fff;
+    }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+@mixin easeOut {
+    transition: all 0.4s ease-out;
+}
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.container {
+    max-width: 1150px;
+    padding: 0 60px;
+    margin: 0 auto;
+  
+    &-md {
+      max-width: 1300px;
+      padding: 0 60px;
+      margin: 0 auto;
+    }
+    &-lg {
+      max-width: 1600px;
+      padding: 0 60px;
+      margin: 0 auto;
+    }
+  }
+  
+  // Media Query Mixins
+  @mixin mediaSm {
+    @media screen and (max-width: 500px) {
+      @content;
+    }
+  }
+  
+  @mixin mediaMd {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+      @content;
+    }
+  }
+  
+  @mixin mediaXL {
+    @media screen and (min-width: 1171px) {
+      @content;
+    }
+  }
+  
+  
+  
