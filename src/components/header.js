@@ -1,8 +1,6 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import Image from "../components/image"
-import Logo from "../components/imgs/logo"
 import Menu from "../components/menu"
 import useToggler from "../components/useToggler"
 
