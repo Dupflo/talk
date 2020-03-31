@@ -1,7 +1,9 @@
 @import 'fonts';
 
 $font-stack: "Calibri";
-$font-stack-light: "Degarism Studio", sans-serif;
+$font-stack-regular: "Degarism Studio", sans-serif;
+$font-stack-light: "Degarism Studio Light", sans-serif;
+$font-stack-medium: "Degarism Studio Medium", sans-serif;
 $font-stack-bold: "Degarism Studio Bold", sans-serif;
 $primary-color: #feec01;
 $secondary-color: #000;
@@ -28,30 +30,25 @@ $header-mobile-height: 60px;
     transition: all 0.4s ease-out;
 }
 
+/** utilities **/
+
+.inline-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
 
 .row{
     display: flex;
     flex-wrap: wrap;
 }
 
-
-.container {
-    max-width: 1150px;
-    padding: 0 60px;
-    margin: 0 auto;
-  
-    &-md {
-      max-width: 1300px;
-      padding: 0 60px;
-      margin: 0 auto;
-    }
-    &-lg {
-      max-width: 1600px;
-      padding: 0 60px;
-      margin: 0 auto;
-    }
-  }
-  
   // Media Query Mixins
   @mixin mediaSm {
     @media screen and (max-width: 500px) {

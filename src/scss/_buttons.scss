@@ -18,6 +18,7 @@
 
 .btn {
   &-primary {
+    margin-top: 2em;
     @extend %btn;
     @include set-background(lighten($primary-color, 10%));
     display: flex;
@@ -35,4 +36,11 @@
 .btn-secondary {
   @extend %btn;
   @include set-background($secondary-color);
+}
+
+
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+  color: $primary-color;
+  margin: 1em;
 }

@@ -23,10 +23,45 @@ p {
   }
 }
 
+header {
+  background: #fff;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-height: 100vh;
+  z-index: 1;
+}
+
 body {
   font-family: $font-stack;
-  line-height: 1;
+  background-color: $light-color;
   font-size: 18px;
+  line-height: 1.5;
+}
+
+section {
+  &:nth-child(2n) {
+    background: #fff;
+  }
+  min-height: 100vh;
+  .container {
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    &-md {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+    &-lg {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+  }
 }
 
 img {
@@ -35,14 +70,12 @@ img {
 
 .logo {
   position: relative;
-  margin-top:2em;
+  margin-top: 2em;
   height: 15vh;
   left: 100px;
   width: 85px;
-  img {
-    width: 100%;
-  }
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -52,22 +85,22 @@ main {
   min-height: 100vh;
 }
 
-.bkg {
-  background: $light-color;
-}
-
 h1 {
   font-size: 1.5em;
   &.home {
     font-size: 4em;
-    font-family: $font-stack-bold;
+    font-family: $font-stack-light;
+
+    strong {
+      font-family: $font-stack-bold;
+    }
   }
   &.title {
-    font-family: $font-stack-bold;
     font-size: 3em;
     line-height: 1.5;
     @include mediaSm {
       font-size: 2em;
+      margin-top: 1em;
       margin-bottom: 1em;
     }
   }
@@ -80,14 +113,12 @@ h2 {
   font-size: 1em;
 }
 
-.inline-flex {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.white {
+  background: #fff;
 }
 
-.text-center {
-  text-align: center;
+.no-padding {
+  padding: 0;
 }
 
 /** START CONTEXT **/
@@ -124,6 +155,10 @@ p {
   font-size: 1.2em;
 }
 
+.bkg {
+  background: #fff;
+}
+
 .card {
   font-family: $font-stack-bold;
   display: flex;
@@ -131,7 +166,7 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  background: #fff;
+  background: $light-color;
   border-radius: 10px;
 
   &:not(.primary) {
@@ -143,7 +178,6 @@ p {
   }
 
   h2 {
-    margin: 20px 0 20px 0;
     font-size: 4em;
     display: flex;
     align-items: center;
@@ -159,10 +193,14 @@ p {
 
   &-list {
     position: relative;
+
+    p {
+      font-size: 1.4em;
+    }
   }
 
   &-id {
-    background: #fff;
+    background: $light-color;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,23 +225,24 @@ p {
   &-follow {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: $light-color;
     margin-top: 1em;
     border-radius: 15px;
     padding: 10px 5px;
     width: 260px;
+    box-shadow: rgba(135, 135, 135, 0.21) 56px 31px 55px;
 
     @include mediaXL {
       &:nth-child(1) {
-        bottom: -150px;
-        right: -48px;
+        bottom: 170px;
+        right: 256px;
         position: absolute;
       }
 
       &:nth-child(2) {
         position: absolute;
-        right: 150px;
-        bottom: -290px;
+        right: 400px;
+        bottom: -20px;
       }
     }
   }
@@ -215,11 +254,12 @@ p {
 }
 
 .label-light {
-  font-size: 1.3em;
-  background-color: $light-color;
+  font-size: 1.2em;
+  background-color: #fff;
   border-radius: 30px;
   margin-top: 1em;
   padding: 0.4em 1.8em;
+  text-align: center;
 }
 
 .vertical-card {
@@ -233,6 +273,12 @@ p {
   -webkit-box-shadow: 0px 16px 38px -12px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 16px 38px -12px rgba(0, 0, 0, 0.61);
 
+  @include mediaMd {
+    text-align: center;
+    margin-bottom: 30px;
+    display: block;
+  }
+
   &:not(.primary) {
     position: relative;
     left: 300px;
@@ -242,7 +288,7 @@ p {
   }
 }
 
-.problems{
+.problems {
   display: flex;
   align-items: center;
   width: 100%;
@@ -250,22 +296,23 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .pb {
   position: relative;
-  left: 200px;
+  /* left: 200px; */
+  display: flex;
+  flex-direction: column;
   p {
     font-size: 1.3em;
     padding: 0.5em;
   }
   &-img {
     height: 100px;
-    width: 100px;
+    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-left: 1em;
 
     &-1 {
       background-image: url("../images/freins/time.png");
@@ -291,7 +338,7 @@ p {
 }
 
 .social-service {
-  background: white;
+  background: $light-color;
   border-radius: 15px;
   -webkit-box-shadow: 0px 16px 38px -12px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 20px 38px -12px rgba(0, 0, 0, 0.2);
@@ -314,41 +361,129 @@ p {
 
 .round {
   position: relative;
-  min-width: 550px;
-  height: 550px;
+  min-width: 25em;
+  height: 25em;
+  background-position: center;
   background-image: url(../images/services/talk360.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
+p {
+  font-size: 1em;
+}
+
 .arg {
-  width: 80px;
   position: absolute;
+  display: flex;
+  cursor: pointer;
+
+  .right {
+    position: absolute;
+    left: -350px;
+    margin-right: 105px;
+  }
+
+  
+
+  .h3 {
+    top: 39px;
+    bottom: 0;
+    color: #bbbbbb;
+
+    &.center {
+      position: absolute;
+      top: 100px;
+      text-align: right;
+    }
+
+    &.right {
+      right: 5px;
+      text-align: right;
+    }
+
+    &.left {
+      left: 5px;
+      text-align: left;
+    }
+  }
+
+  .left {
+    position: absolute;
+    right: -350px;
+    margin-left: 105px;
+  }
+
+  .info {
+    position: absolute;
+    z-index: 0;
+    padding: 1em;
+    background: white;
+    border-radius: 15px;
+  }
+  i {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    &.photo {
+      background-image: url(../images/services/photo.png);
+      &Y {
+        background-image: url(../images/services/photoY.png);
+      }
+    }
+
+    &.bilan {
+      background-image: url(../images/services/bilan.png);
+      &Y {
+        background-image: url(../images/services/bilanY.png);
+      }
+    }
+
+    &.talk {
+      background-image: url(../images/services/talk.png);
+      &Y {
+        background-image: url(../images/services/talkY.png);
+      }
+    }
+
+    &.sponsor {
+      background-image: url(../images/services/sponsor.png);
+      &Y {
+        background-image: url(../images/services/sponsorY.png);
+      }
+    }
+
+    &.bell {
+      background-image: url(../images/services/bell.png);
+      &Y {
+        background-image: url(../images/services/bellY.png);
+      }
+    }
+  }
 
   &1 {
     left: 10%;
-    top: 5%;
+    top: 0;
   }
 
   &2 {
     right: 10%;
-    top: 5%;
+    top: 0;
   }
 
   &3 {
-    left: -5%;
+    left: -9%;
     bottom: 30%;
   }
 
   &4 {
-    right: -5%;
+    right: -9%;
     bottom: 30%;
   }
 
   &5 {
-    left: 42%;
-    right: 50%;
-    bottom: -7%;
+    left: 39%;
+    bottom: -10%;
   }
 }
 
@@ -364,7 +499,7 @@ p {
 .card4 {
   position: absolute;
   top: 5%;
-  right: 0;
+  right: 8%;
   bottom: 0;
   width: 100%;
   height: 100%;
@@ -377,15 +512,19 @@ p {
 }
 
 .card1 {
-  background-image: url(../images/squares.png);
+  background-image: url(../images/squares.svg);
 }
 
 .card2 {
-  background-image: url(../images/phone.png);
+  background-image: url(../images/emojis2.svg);
 }
 
 .card3 {
-  background-image: url(../images/emojis.png);
+  background-image: url(../images/smartphone.svg);
+}
+
+.card4 {
+  background-image: url(../images/emojis1.svg);
 }
 
 /** END PARALLAX **/
@@ -398,29 +537,27 @@ p {
 }
 
 .bundle {
-  background: #fff;
+  background: $light-color;
   border-radius: 25px;
 }
 
 .check-item,
 .price-check-item {
-  display: flex;
-  justify-content: center;
-  @include mediaXL {
-    align-items: center;
-  }
+  display: grid;
+  grid-template-columns: 8% 92%;
 }
 
 i {
   &.checked {
-    width: 90px;
-    height: 50px;
-    background-image: url(../images/check.png);
+    max-width: 25px;
+    min-height: 25px;
+    background-image: url(../images/checked.svg);
     background-repeat: no-repeat;
+    margin-right: 1em;
   }
   &.light-checked {
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
     background-image: url(../images/item-check.png);
     background-repeat: no-repeat;
   }
@@ -435,7 +572,7 @@ i {
 .payment-notes {
   font-family: $font-stack-light;
   padding: 1em;
-  background: $light-color;
+  background: #fff;
   border-radius: 5px;
   line-height: 1.5;
 }
@@ -443,6 +580,7 @@ i {
 .price {
   font-family: $font-stack-light;
   display: flex;
+  align-items: center;
   font-size: 1.8em;
   &-nb {
     font-weight: 600;
@@ -450,8 +588,10 @@ i {
   }
 
   .period {
-    margin-left: 1em;
+    margin-left: 0.2em;
+    line-height: 1;
     color: #7f7f7f;
+    font-size: 0.8em;
     strong {
       color: #000;
     }
@@ -466,14 +606,21 @@ i {
 }
 
 .insta {
-  background-image: url(../images/insta.png);
+  background-image: url(../images/insta.svg);
+  width: 80px;
+  height: 80px;
+  margin-right: 1.5em;
+}
+
+.gmb {
+  background-image: url(../images/gmb.svg);
   width: 80px;
   height: 80px;
   margin-right: 1.5em;
 }
 
 .fb {
-  background-image: url(../images/fb.png);
+  background-image: url(../images/fb.svg);
   width: 80px;
   height: 80px;
   margin-right: 1.5em;
@@ -489,6 +636,19 @@ i {
   background-image: url(../images/contact/photoRaph.png);
 }
 
+.square {
+  background-size: 100%;
+  background-image: url(../images/squares.svg);
+
+  &-top-left {
+    position: absolute;
+  }
+}
+
+#references {
+  background-image: url(../images/clients.png);
+  background-size: contain;
+}
 /** END PRICE PAGE **/
 
 @import "buttons";

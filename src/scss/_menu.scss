@@ -1,106 +1,137 @@
 //Menu Button
-
-.header-mobile {
-        height: $header-mobile-height;
-        background: #fff;
-    }
-
-
-.menu {
-    background: #fff;
-}
 .menu-btn {
-    position: absolute;
-    z-index: 3;
-    right: 20px;
-    top: 20px;
-    cursor: pointer;
-    @include easeOut;
+  position: fixed;
+  z-index: 3;
+  left: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
 
-    .btn-line {
-        width: 28px;
-        height: 3px;
-        margin: 0 0 5px 0;
-        background: $secondary-color;
-        @include easeOut;
-    }
+  .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      background: #333;
+      @include easeOut;
+  }
 
-    // Rotate Into X With Menu Lines
-    &.close {
-        transform: rotate(180deg);
-        .btn-line {
-            background: set-text-color($secondary-color);
-            // Line 1 - Rotate
-            &:nth-child(1){
-                transform: rotate(45deg) translate(5px, 5px);
-            }
+  // Rotate Into X With Menu Lines
+  &.close {
+      transform: rotate(180deg);
+      .btn-line {
+          background: #333;
+          // Line 1 - Rotate
+          &:nth-child(1){
+              transform: rotate(45deg) translate(5px, 5px);
+          }
 
-            // Line 2 - Rotate
-             &:nth-child(2) {
-                 opacity: 0;
-             }
+          // Line 2 - Rotate
+           &:nth-child(2) {
+               opacity: 0;
+           }
 
-            // Lince 3 - Rotate
-             &:nth-child(3) {
-                transform: rotate(135deg) translate(-6px, 6px);
-             }
-        }
-    }
+          // Lince 3 - Rotate
+           &:nth-child(3) {
+              transform: rotate(135deg) translate(-6px, 6px);
+           }
+      }
+  }
 }
 
 // Menu Overlay
-// Menu Overlay
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #00000061;
+  opacity: 0;
+  transition: 0.4;
+  @include easeOut;
+  &.show {
+    display: block;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+}
 .menu {
-    &-desktop{
-      display: none;
-      @include mediaXL {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 90vh;
-      }
-    }
+  transform: translate3d(-100%, 0 , 0);
+  @include easeOut;
 
-    &-mobile {
-      display: none;
-      @include mediaSm {
-        // display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-    }
-
-   .menu-branding {
-        display: grid;
-        flex-direction: column;
-        padding: 0;
-        align-items: center;
-        height: 60vh;
-        @include mediaSm {
-            height: 100vh;
-          }
-    }
-
-    .nav-item {
-      font-family: $font-stack-light;
-      font-size: 1em;
-      list-style-type: none;
-    }
-
-    .nav-link {
-      padding: 0.8em 5em;
-      &.active {
-        background: $primary-color;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
-      }
-    }
+  &.show {
+      visibility: visible;
+      transform: translate3d(0, 0, 0);
   }
+
+  &-branding,
+  &-nav {
+      display: block;
+      margin: 0 20% 0 0;
+
+      overflow: hidden;
+  }
+
+  // Branding Side
+  &-branding {
+      background: rgba($primary-color, 0.9);
+      transform: translate3d(0, 100%, 0);
+      @include easeOut;
+
+      &.show {
+          // Slide in from bottom
+          transform: translate3d(0, 0, 0);
+      }
+  }
+
+  .nav-item {
+      text-decoration: none;
+      transform: translate3d(-600px, 0, 0);
+      background: transparent;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      margin: 1em 0;
+      list-style-type: none;
+      @include easeOut;
+
+      &:hover {
+        background: $primary-color;
+      }
+
+      &.show {
+          // Slide in from right
+          transform: translate3d(0, 0, 0);
+      }
+
+      a {
+        padding-left: 40%;
+        padding-right: 10%;
+      }
+
+      & a.active {
+          background: $primary-color;
+      }
+  }
+
+  .nav-link {
+      display: inline-block;
+      position: relative;
+      padding: 1rem 0;
+      font-weight: 300;
+      text-decoration: none;
+      @include easeOut;
+
+      &:hover {
+    
+          color: $secondary-color;
+      }
+  }
+}
 
 
 //Delay each nav item slide by 0.1s
-@for $x from 1 through 5 {
-    .nav-item:nth-child(#{$x}) {
-        transition-delay: $x * 0.1s;
-    }
+@for $x from 1 through 7 {
+  .nav-item:nth-child(#{$x}) {
+    //   transition-delay: $x * 0.1s;
+  }
 }
