@@ -1,6 +1,6 @@
 import React from "react"
 import Container from "../container"
-import Image from "../image"
+
 const Problematiques = () => (
   <Container >
     <div className="problems">
@@ -20,7 +20,7 @@ const Problematiques = () => (
             <p>"Je souhaite maitriser mon investissement"</p>
           </div>
         </div>
-        <div className="pb-bkg"><Image alt="Gatsby in Space" filename="freins/man.jpg" /></div>
+        <div className="pb-bkg"></div>
  
     </div>
   </Container>

@@ -1,10 +1,15 @@
 @include mediaXL {
+  .visible-mobile{
+    display: none;
+  }
   .grid-major {
-    padding-left: 160px!important;
+    padding-left: $home-padding!important;
 }
 }
 
 @include mediaLg {
+
+ 
 
   .homelogo .gatsby-image-wrapper {
     width: 150px!important;
@@ -18,6 +23,7 @@
 }
 
 @include mediaMd {
+  
 
   #home {
     div {
@@ -41,18 +47,23 @@
     margin: auto;
 
     .pb {
-      height: 100vh;
+      min-height: 100vh;
       align-items: center;
       justify-content: space-evenly;
   }
 
     .pb-bkg {
       display: none;
+     
     }
 }
 }
 
 @include mediaSm {
+
+  .visible-desktop{
+    display: none;
+  }
   main {
     position: relative;
     top: $header-mobile-height;

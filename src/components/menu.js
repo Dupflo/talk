@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import Image from "../components/image"
+import Logo from "./logo"
 import useToggler from "../components/useToggler"
 
 
@@ -19,7 +19,7 @@ function Menu() {
       <header className={show ? "menu show" : "menu"}>
         <div className="logo" style={{ maxWidth: `100px` }}>
           <Link to="/" onClick={toggle}>
-            <Image alt="Gatsby in Space" filename="logo_talk.png" />
+            <Logo />
           </Link>
         </div>
         <ul className={show ? "menu-nav show" : "menu-nav"}>

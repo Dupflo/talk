@@ -315,6 +315,9 @@ p {
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  background-image: url("../images/picture.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
@@ -410,6 +413,45 @@ p {
   font-size: 1em;
 }
 
+i {
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  &.photo {
+    background-image: url(../images/services/photo.svg);
+    &Y {
+      background-image: url(../images/services/photoY.svg);
+    }
+  }
+
+  &.bilan {
+    background-image: url(../images/services/bilan.svg);
+    &Y {
+      background-image: url(../images/services/bilanY.svg);
+    }
+  }
+
+  &.talk {
+    background-image: url(../images/services/talk.svg);
+    &Y {
+      background-image: url(../images/services/talkY.svg);
+    }
+  }
+
+  &.sponsor {
+    background-image: url(../images/services/sponsor.svg);
+    &Y {
+      background-image: url(../images/services/sponsorY.svg);
+    }
+  }
+
+  &.bell {
+    background-image: url(../images/services/bell.svg);
+    &Y {
+      background-image: url(../images/services/bellY.svg);
+    }
+  }
+}
 
 .arg {
   
@@ -460,45 +502,7 @@ p {
     background: white;
     border-radius: 15px;
   }
-  i {
-    width: 75px;
-    height: 75px;
-    background-size: contain;
-    &.photo {
-      background-image: url(../images/services/photo.svg);
-      &Y {
-        background-image: url(../images/services/photoY.svg);
-      }
-    }
 
-    &.bilan {
-      background-image: url(../images/services/bilan.svg);
-      &Y {
-        background-image: url(../images/services/bilanY.svg);
-      }
-    }
-
-    &.talk {
-      background-image: url(../images/services/talk.svg);
-      &Y {
-        background-image: url(../images/services/talkY.svg);
-      }
-    }
-
-    &.sponsor {
-      background-image: url(../images/services/sponsor.svg);
-      &Y {
-        background-image: url(../images/services/sponsorY.svg);
-      }
-    }
-
-    &.bell {
-      background-image: url(../images/services/bell.svg);
-      &Y {
-        background-image: url(../images/services/bellY.svg);
-      }
-    }
-  }
 
   &1 {
     left: 17%;
@@ -547,6 +551,18 @@ p {
   background-position: center center;
   background-repeat: no-repeat;
   will-change: transform;
+}
+
+.pb-parallax {
+  min-height: 100vh;
+
+  .problems{
+    position: absolute;
+    left: 0;
+    background-image: url(../images/clients.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 .card1 {
@@ -690,21 +706,6 @@ i {
   }
 }
 
-#references {
-  background-image: url(../images/clients.png);
-  background-size: contain;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  @include mediaMd{
-    background-size: cover;
-    h1 {
-      background: #fff;
-      padding: 10px;
-    }
-  }
-}
 /** END PRICE PAGE **/
 
 
@@ -738,15 +739,70 @@ i {
 .scroll-icon {
   display: block;
   position: relative;
+  @include mediaXL{
+    left: calc(49vw - #{$home-padding});
+    }
   height: 4em;
   width: 2em;
   border: .2em solid $primary-color;
   border-radius: 1em;
   margin-top: 12vh;
+  @include mediaLg{
   margin-left: auto;
   margin-right: auto;
+  }
+
+}
+
+#references {
+    display: flex;
+    h1{
+      margin-right: 8em;
+    }
+    @include mediaSm{
+      h1{
+        margin-right: 0;
+      }
+    flex-direction: column;
+    
+    }
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 100vh;
+}
+
+.card-services {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  text-align: center;
+  margin: 50px 0;
 
 
+
+  h2{
+    margin-top:1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    svg {
+      margin-left: 10px;
+      background: $primary-color;
+      border-radius: 50%;
+    }
+  }
+
+  i{
+    position: absolute;
+    top: -31px;
+  }
 }
 
 

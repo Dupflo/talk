@@ -9,7 +9,6 @@ import Services from "../components/contents/services"
 import Tarifs from "../components/contents/tarifs"
 import References from "../components/contents/references"
 import Contact from "../components/contents/contact"
-import Accordion from "../components/accordion"
 
 const IndexPage = () => (
   <>
