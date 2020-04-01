@@ -6,7 +6,7 @@ const Expertises = () => (
   <Container >
     <div id="expertises" className="m-5">
       <h1 className="title">
-        Nous intervenons sur les réseaux sociaux les plus consultés par les
+        Nous intervenons sur les réseaux sociaux <br/>les plus consultés par les
         français
       </h1>
       <div className="grid-3 container-lg">

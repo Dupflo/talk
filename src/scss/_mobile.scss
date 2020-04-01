@@ -1,29 +1,42 @@
 @include mediaXL {
-  .visible-mobile{
+  .visible-mobile {
     display: none;
   }
   .grid-major {
-    padding-left: $home-padding!important;
-}
+    padding-left: $home-padding !important;
+  }
+  .round-mobile{
+    display: none;
+  }
 }
 
 @include mediaLg {
-
+  .round-desktop{
+    display: none;
+  }
  
-
+  .visible-mobile {
+    display: none;
+  }
   .homelogo .gatsby-image-wrapper {
-    width: 150px!important;
+    width: 150px !important;
   }
   #home {
     background: white;
-}
+  }
   .grid-minor {
     display: none !important;
   }
 }
 
 @include mediaMd {
-  
+  .round-desktop{
+    display: none;
+  }
+  .visible-mobile {
+    display: none;
+  }
+
 
   #home {
     div {
@@ -35,33 +48,32 @@
   }
 
   h1 {
-    &.title, &.home {
+    &.title,
+    &.home {
       text-align: center;
+    }
   }
-}
   .grid-minor {
     display: none !important;
   }
   .problems {
-    display: block!important;
+    display: block !important;
     margin: auto;
 
     .pb {
       min-height: 100vh;
       align-items: center;
       justify-content: space-evenly;
-  }
+    }
 
     .pb-bkg {
       display: none;
-     
     }
-}
+  }
 }
 
 @include mediaSm {
-
-  .visible-desktop{
+  .visible-desktop {
     display: none;
   }
   main {
@@ -77,47 +89,34 @@
     }
     &.title {
       font-size: 1.5em !important;
-      
     }
   }
-
-
-
-
 
   .homelogo .gatsby-image-wrapper {
     width: 150px;
   }
 
-
   .card {
-
     &:not(.primary) {
-      top: 0!important;
+      top: 0 !important;
     }
-  
   }
 
-  .problems{
-    background-size: cover!important;
+  .problems {
+    background-size: cover !important;
     background-position-y: 150px;
   }
 
   .visible-desktop {
     display: none;
   }
-
 }
 
 //Margin & padding classes
 $spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 @each $space in $spaceamounts {
-  
-
-
-
-.flex-start {
+  .flex-start {
     align-items: flex-start;
   }
 
@@ -132,7 +131,7 @@ $spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
     > div {
       padding: 30px;
-    margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     @include mediaMd {
@@ -143,8 +142,6 @@ $spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
       margin: 0;
     }
   }
-
-
 }
 
 .grid-major {

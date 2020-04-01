@@ -27,7 +27,7 @@ const References = () => {
 
   return (
     <>
-      <h1 className="title">Ils nous font confiance</h1>
+      <h1 className="title visible-mobile">Ils nous font confiance</h1>
       <div className="pb-parallax visible-desktop"
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >

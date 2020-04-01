@@ -1,6 +1,6 @@
 @import 'fonts';
 
-$font-stack: "Calibri", sans-serif;
+$font-stack: "Degarism Studio Medium", sans-serif;
 $font-stack-regular: "Degarism Studio", sans-serif;
 $font-stack-light: "Degarism Studio Light", sans-serif;
 $font-stack-medium: "Degarism Studio Medium", sans-serif;
@@ -59,13 +59,13 @@ $header-mobile-height: 60px;
   }
   
   @mixin mediaMd {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
       @content;
     }
   }
   
   @mixin mediaLg {
-    @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @media screen and (min-width: 770px) and (max-width: 1170px) {
       @content;
     }
   }

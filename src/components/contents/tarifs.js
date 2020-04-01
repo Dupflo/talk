@@ -5,7 +5,7 @@ const Tarifs = () => (
   <Container >
     <div id="tarifs" className="grid-2">
       <div className="check-list m-3 p-2">
-        <h1 className="title">Une offre all inclusive</h1>
+        <h1 className="title">Une offre <br/> all inclusive</h1>
         <div className="check-item py-2">
           <i className="checked"></i>
           <p>
