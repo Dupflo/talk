@@ -1,7 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-import Container from "../container"
-import TrendingFlatIcon from "@material-ui/icons/TrendingFlat"
 import Image from "../image"
 import HomeParallax from "../homeparallax"
 
