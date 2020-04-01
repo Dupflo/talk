@@ -1,6 +1,5 @@
 import React from "react"
 import { useSpring, animated } from "react-spring"
-import { Grid } from "@material-ui/core"
 
 function HomeParallax() {
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
@@ -15,8 +14,7 @@ function HomeParallax() {
   }))
 
   return (
-    <Grid
-      container
+    <div
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >
       <animated.div
@@ -35,7 +33,7 @@ function HomeParallax() {
         className="card4"
         style={{ transform: props.xy.interpolate(trans3) }}
       />
-    </Grid>
+    </div>
   )
 }
 

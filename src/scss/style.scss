@@ -41,6 +41,7 @@ body {
 }
 
 section {
+  padding: 10px 20px;
   &:nth-child(2n) {
     background: #fff;
   }
@@ -50,7 +51,7 @@ section {
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     min-height: 100vh;
     &-md {
@@ -71,7 +72,7 @@ img {
 .logo {
   position: relative;
   margin-top: 2em;
-  height: 15vh;
+  height: 20vh;
   left: 100px;
   width: 85px;
 }
@@ -85,6 +86,18 @@ main {
   min-height: 100vh;
 }
 
+#home {
+  min-height: 100vh;
+  section {
+    padding: 0;
+  }
+  .grid-3>div {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+  }
+}
+
 h1 {
   font-size: 1.5em;
   &.home {
@@ -96,12 +109,14 @@ h1 {
     }
   }
   &.title {
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 1.5;
-    @include mediaSm {
-      font-size: 2em;
-      margin-top: 1em;
+    max-width: 900px;
       margin-bottom: 1em;
+    @include mediaMd {
+      font-size: 2em;
+      margin-top: 2em;
+      margin-bottom: 2em;
     }
   }
 
@@ -124,22 +139,22 @@ h2 {
 /** START CONTEXT **/
 .context-img {
   position: absolute;
-  top: -50px;
-  height: 100px;
-  width: 100px;
+  top: -40px;
+  height: 80px;
+  width: 80px;
   background-size: contain;
   background-repeat: no-repeat;
 
   &-1 {
-    background-image: url("../images/context/users.png");
+    background-image: url("../images/context/users.svg");
   }
 
   &-2 {
-    background-image: url("../images/context/sablier.png");
+    background-image: url("../images/context/sablier.svg");
   }
 
   &-3 {
-    background-image: url("../images/context/thumb.png");
+    background-image: url("../images/context/thumb.svg");
   }
 }
 
@@ -148,7 +163,7 @@ small {
 }
 
 h2 {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 p {
@@ -168,11 +183,13 @@ p {
   text-align: center;
   background: $light-color;
   border-radius: 10px;
+  min-height: 300px;
+  max-width: 330px;
 
   &:not(.primary) {
     position: relative;
     top: 3em;
-    @include mediaSm {
+    @include mediaMd {
       top: 0;
     }
   }
@@ -208,6 +225,8 @@ p {
     -webkit-box-shadow: 66px 71px 172px -75px rgba(135, 135, 135, 1);
     -moz-box-shadow: 66px 71px 172px -75px rgba(135, 135, 135, 1);
     box-shadow: 66px 71px 172px -75px rgba(135, 135, 135, 1);
+    max-width: 480px;
+    min-height: 600px;
 
     h2 {
       font-family: $font-stack-light;
@@ -263,9 +282,11 @@ p {
 }
 
 .vertical-card {
-  display: flex;
+  display: grid;
   flex-direction: row;
   justify-content: flex-start;
+  max-width: 450px;
+  grid-template-columns: 20% 80%;
   align-items: center;
   background: #fff;
   border-radius: 10px;
@@ -282,21 +303,25 @@ p {
   &:not(.primary) {
     position: relative;
     left: 300px;
-    @include mediaSm {
-      left: 0;
+    @include mediaMd {
+      left: 0!important;
     }
   }
 }
 
 .problems {
-  display: flex;
+  display: grid;
+  grid-template-columns: 60% 40%;
   align-items: center;
   width: 100%;
-  background-image: url("../images/freins/man.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position-x: 100%;
   min-height: 100vh;
+}
+
+
+.pb-bkg {
+  position: relative;
+  z-index: -1;
+  /* left: 20px; */
 }
 
 .pb {
@@ -309,26 +334,34 @@ p {
     padding: 0.5em;
   }
   &-img {
-    height: 100px;
+    height: 70px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 
     &-1 {
-      background-image: url("../images/freins/time.png");
+      background-image: url("../images/freins/time.svg");
     }
 
     &-2 {
-      background-image: url("../images/freins/worker.png");
+      background-image: url("../images/freins/worker.svg");
     }
 
     &-3 {
-      background-image: url("../images/freins/money.png");
+      background-image: url("../images/freins/money.svg");
     }
   }
 }
 
 /** END CONTEXT **/
+
+#services {
+  overflow: hidden;
+
+  .container {
+    padding-bottom: 90px;
+  }
+}
 
 /** Nos expertises **/
 
@@ -342,6 +375,10 @@ p {
   border-radius: 15px;
   -webkit-box-shadow: 0px 16px 38px -12px rgba(0, 0, 0, 0.61);
   box-shadow: 0px 20px 38px -12px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  display: block;
+  margin: auto;
+  min-height: 350px;
 
   p {
     margin-top: 2em;
@@ -373,7 +410,9 @@ p {
   font-size: 1em;
 }
 
+
 .arg {
+  
   position: absolute;
   display: flex;
   cursor: pointer;
@@ -422,68 +461,68 @@ p {
     border-radius: 15px;
   }
   i {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     background-size: contain;
     &.photo {
-      background-image: url(../images/services/photo.png);
+      background-image: url(../images/services/photo.svg);
       &Y {
-        background-image: url(../images/services/photoY.png);
+        background-image: url(../images/services/photoY.svg);
       }
     }
 
     &.bilan {
-      background-image: url(../images/services/bilan.png);
+      background-image: url(../images/services/bilan.svg);
       &Y {
-        background-image: url(../images/services/bilanY.png);
+        background-image: url(../images/services/bilanY.svg);
       }
     }
 
     &.talk {
-      background-image: url(../images/services/talk.png);
+      background-image: url(../images/services/talk.svg);
       &Y {
-        background-image: url(../images/services/talkY.png);
+        background-image: url(../images/services/talkY.svg);
       }
     }
 
     &.sponsor {
-      background-image: url(../images/services/sponsor.png);
+      background-image: url(../images/services/sponsor.svg);
       &Y {
-        background-image: url(../images/services/sponsorY.png);
+        background-image: url(../images/services/sponsorY.svg);
       }
     }
 
     &.bell {
-      background-image: url(../images/services/bell.png);
+      background-image: url(../images/services/bell.svg);
       &Y {
-        background-image: url(../images/services/bellY.png);
+        background-image: url(../images/services/bellY.svg);
       }
     }
   }
 
   &1 {
-    left: 10%;
-    top: 0;
+    left: 17%;
+    top: 7%;
   }
 
   &2 {
-    right: 10%;
-    top: 0;
+    right: 17%;
+    top: 7%;
   }
 
   &3 {
-    left: -9%;
+    left: -1%;
     bottom: 30%;
   }
 
   &4 {
-    right: -9%;
+    right: -1%;
     bottom: 30%;
   }
 
   &5 {
-    left: 39%;
-    bottom: -10%;
+    left: 41%;
+    bottom: -2%;
   }
 }
 
@@ -498,7 +537,6 @@ p {
 .card3,
 .card4 {
   position: absolute;
-  top: 5%;
   right: 8%;
   bottom: 0;
   width: 100%;
@@ -539,12 +577,23 @@ p {
 .bundle {
   background: $light-color;
   border-radius: 25px;
+  max-width: 450px;
+  margin: auto;
 }
 
 .check-item,
 .price-check-item {
   display: grid;
   grid-template-columns: 8% 92%;
+  margin: 20px;
+
+  @include mediaSm{
+    margin: 30px 0px;
+
+    p{
+      margin-left: 10px;
+    }
+  }
 }
 
 i {
@@ -575,6 +624,8 @@ i {
   background: #fff;
   border-radius: 5px;
   line-height: 1.5;
+  margin-bottom: 40px;
+ 
 }
 
 .price {
@@ -601,29 +652,23 @@ i {
 i {
   background-repeat: no-repeat;
   background-size: contain;
-  width: 45px;
-  height: 45px;
+  width: 65px;
+  height: 65px;
 }
 
 .insta {
   background-image: url(../images/insta.svg);
-  width: 80px;
-  height: 80px;
-  margin-right: 1.5em;
+  margin-right: 12px;
 }
 
 .gmb {
   background-image: url(../images/gmb.svg);
-  width: 80px;
-  height: 80px;
-  margin-right: 1.5em;
+  margin-right: 12px;
 }
 
 .fb {
   background-image: url(../images/fb.svg);
-  width: 80px;
-  height: 80px;
-  margin-right: 1.5em;
+  margin-right: 12px;
 }
 
 .smile {
@@ -648,8 +693,63 @@ i {
 #references {
   background-image: url(../images/clients.png);
   background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include mediaMd{
+    background-size: cover;
+    h1 {
+      background: #fff;
+      padding: 10px;
+    }
+  }
 }
 /** END PRICE PAGE **/
+
+
+
+// Example 2
+@keyframes scroll_2 {
+  0%   { transform: translateY(0); opacity: 1; }
+  25%  { opacity: 1; }
+  75%  { transform: translateY(.75em); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+
+
+.scroll-icon__dot {
+  display: block;
+  position: absolute;
+  left: 50%;
+  background: $primary-color;
+  height: .5em;
+  width: .5em;
+  top: .6em;
+  margin-left: -.25em;
+  border-radius: 50%;
+  transform-origin: top center;
+  backface-visibility: hidden;
+  animation: scroll_2 2s ease-out infinite;
+}
+
+// General icon style
+.scroll-icon {
+  display: block;
+  position: relative;
+  height: 4em;
+  width: 2em;
+  border: .2em solid $primary-color;
+  border-radius: 1em;
+  margin-top: 12vh;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+
 
 @import "buttons";
 

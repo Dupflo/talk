@@ -1,11 +1,12 @@
 import React from "react"
-import Image from "../image"
 import SEO from "../seo"
 import useToggler from "../useToggler"
 import Container from "../container"
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+
 
 function Services(props) {
+
+
   const [show1, toggle1] = useToggler(false)
   const [show2, toggle2] = useToggler(false)
   const [show3, toggle3] = useToggler(false)
@@ -15,7 +16,6 @@ function Services(props) {
     <Container>
       <SEO title="Page two" />
       <h1 className="title">Notre solution clé en main</h1>
-      <ExpandMoreIcon fontSize="large" />
       <div className="round visible-desktop container-lg">
         <div className="arg arg1" onMouseEnter={toggle1} onMouseLeave={toggle1}>
           <div

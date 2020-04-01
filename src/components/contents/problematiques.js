@@ -1,11 +1,12 @@
 import React from "react"
 import Container from "../container"
+import Image from "../image"
 const Problematiques = () => (
   <Container >
-    <div id="problematiques" className="problems">
-      <div className="py-2">
-        <h1 className="title text-center">Vos problématiques ?</h1>
+    <div className="problems">
+  
         <div className="pb">
+        <h1 className="title text-center">Vos problématiques ?</h1>
           <div className="vertical-card py-1">
             <div className="pb-img pb-img-1"></div>
             <p>"Je n'ai pas le temps de m'en occuper"</p>
@@ -19,7 +20,8 @@ const Problematiques = () => (
             <p>"Je souhaite maitriser mon investissement"</p>
           </div>
         </div>
-      </div>
+        <div className="pb-bkg"><Image alt="Gatsby in Space" filename="freins/man.jpg" /></div>
+ 
     </div>
   </Container>
 )

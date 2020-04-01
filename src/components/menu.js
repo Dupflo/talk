@@ -65,7 +65,7 @@ function Menu() {
             </Link>
           </li>
           <li className={show ? "nav-item show" : "nav-item "}>
-            <Link to="#tarifs" className="nav-link" activeClassName="active">
+            <Link to="#tarifs" className="nav-link" activeClassName="active"  onClick={toggle}>
               Nos tarifs
             </Link>
           </li>
