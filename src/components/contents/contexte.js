@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const Contexte = (title) => (
   <Container >
     <h1 className="title text-center">
-      Les réseaux sociaux sont indispensables à la visibilité de votre
+      Les réseaux sociaux sont indispensables à <br/>la visibilité de votre
       entreprise
     </h1>
     <ExpandMoreIcon fontSize="large"/>
