@@ -1,4 +1,10 @@
 @include mediaXL {
+  #tarifs {
+    h1 {
+      text-align: left!important;
+      margin-bottom: 1em;
+    }
+  }
   .visible-mobile {
     display: none;
   }
@@ -11,6 +17,11 @@
 }
 
 @include mediaLg {
+  #tarifs {
+    h1 {
+      text-align: left!important;
+    }
+  }
   .round-desktop{
     display: none;
   }

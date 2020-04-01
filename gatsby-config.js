@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Spécialisés dans la gestion des réseaux sociaux, Talk propose une solution qui vous permet de bénéficier d&#039;une communication qui favorise votre activité.`,
     author: `@gatsbyjs`,
   },
   plugins: [

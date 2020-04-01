@@ -6,16 +6,20 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight"
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 
 function Services(props) {
+  
   const [show1, toggle1] = useToggler(false)
   const [show2, toggle2] = useToggler(false)
   const [show3, toggle3] = useToggler(false)
   const [show4, toggle4] = useToggler(false)
   const [show5, toggle5] = useToggler(false)
+ 
   return (
     <Container>
-      <SEO title="Page two" />
+      <SEO title="Talk - Solution pour vos réseaux sociaux" />
       <h1 className="title">Notre solution clé en main</h1>
       <div className="round round-desktop container-lg">
+
+       
         <div className="arg arg1" onMouseEnter={toggle1} onMouseLeave={toggle1}>
           <div
             className="info right"
